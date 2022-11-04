@@ -57,3 +57,35 @@ mysql> describe address_book_table;
 8 rows in set (0.19 sec)
 
 mysql>
+
+mysql> insert into address_book_table VALUES('Ramesh','Wagh','Katraj','Pune','Maharashtra',411005,7894561230,'ramesh@gma
+il.com');
+ERROR 1264 (22003): Out of range value for column 'PhoneNumber' at row 1
+mysql> insert into address_book_table VALUES('Ramesh','Wagh','Katraj','Pune','Maharashtra',411005,78961230,'ramesh@gmail
+.com');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into address_book_table VALUES('Jitesh','Thakre','Balewadi','Pune','Maharashtra',411006,78888880,'jitesh@g
+mail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into address_book_table VALUES('Yogesh','Haande','Thane','Mumbai','Maharashtra',411023,79966380,'yogesh@gm
+ail.com');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into address_book_table VALUES('Snehal','Kaale','ManishNagar','Nagpur','Maharashtra',414556,79222280,'sneh
+al@gmail.com');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from address_book_table;
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| FirstName | LastName | Address     | City   | State       | Zip    | PhoneNumber | Email            |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| Ramesh    | Wagh     | Katraj      | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com |
+| Jitesh    | Thakre   | Balewadi    | Pune   | Maharashtra | 411006 |    78888880 | jitesh@gmail.com |
+| Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |    79966380 | yogesh@gmail.com |
+| Snehal    | Kaale    | ManishNagar | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql>
