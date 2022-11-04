@@ -106,3 +106,18 @@ mysql> select * from address_book_table;
 4 rows in set (0.00 sec)
 
 mysql>
+
+mysql> delete from address_book_table where FirstName="Jitesh";
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from address_book_table;
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| FirstName | LastName | Address     | City   | State       | Zip    | PhoneNumber | Email            |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| Ramesh    | Wagh     | Katraj      | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com |
+| Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com |
+| Snehal    | Kaale    | ManishNagar | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+3 rows in set (0.00 sec)
+
+mysql>
