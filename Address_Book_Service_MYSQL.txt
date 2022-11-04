@@ -89,3 +89,20 @@ mysql> select * from address_book_table;
 4 rows in set (0.00 sec)
 
 mysql>
+
+mysql> update address_book_table set PhoneNumber=7777777 where FirstName="Yogesh";
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book_table;
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| FirstName | LastName | Address     | City   | State       | Zip    | PhoneNumber | Email            |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+| Ramesh    | Wagh     | Katraj      | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com |
+| Jitesh    | Thakre   | Balewadi    | Pune   | Maharashtra | 411006 |    78888880 | jitesh@gmail.com |
+| Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com |
+| Snehal    | Kaale    | ManishNagar | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
+4 rows in set (0.00 sec)
+
+mysql>
