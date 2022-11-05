@@ -145,3 +145,28 @@ mysql> select * from address_book_table where City="Mumbai";
 | Yogesh    | Haande   | Thane   | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com |
 +-----------+----------+---------+--------+-------------+--------+-------------+------------------+
 1 row in set (0.00 sec)
+
+
+mysql> select count(*) from address_book_table where City='Nagpur';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.04 sec)
+
+mysql> select count(*) from address_book_table where City='Pune';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from address_book_table where City='Mumbai';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
