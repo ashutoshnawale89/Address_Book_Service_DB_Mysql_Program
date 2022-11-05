@@ -180,3 +180,69 @@ mysql> select * from address_book_table order by FirstName ASC;
 | Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com |
 +-----------+----------+-------------+--------+-------------+--------+-------------+------------------+
 3 rows in set (0.26 sec)
+
+mysql> alter table address_book_table ADD COLUMN RelationName VARCHAR(100);
+Query OK, 0 rows affected (0.87 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table address_book_table ADD COLUMN Type Varchar(100);
+Query OK, 0 rows affected (0.47 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book_table;
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+----+
+| FirstName | LastName | Address     | City   | State       | Zip    | PhoneNumber | Email            | RelationName | T
+ype |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+----+
+| Ramesh    | Wagh     | Katraj      | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com | NULL         | N
+ULL |
+| Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com | NULL         | N
+ULL |
+| Snehal    | Kaale    | ManishNagar | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com | NULL         | N
+ULL |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+----+
+3 rows in set (0.00 sec)
+
+mysql> update address_book_table set RelationName='Snehal' where FirstName='Ramesh';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set RelationName='Ramesh' where FirstName='Yogesh';
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set RelationName='Yogesh' where FirstName='Snehal';
+Query OK, 1 row affected (0.11 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set Type='Friend' where FirstName='Snehal';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set Type='FamilyFriend' where FirstName='Yogesh';
+Query OK, 1 row affected (0.40 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set Type='Profession' where FirstName='Ramesh';
+Query OK, 1 row affected (1.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book_table;
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+------------+
+| FirstName | LastName | Address     | City   | State       | Zip    | PhoneNumber | Email            | RelationName | T
+ype         |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+------------+
+| Ramesh    | Wagh     | Katraj      | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com | Snehal       | P
+rofession   |
+| Yogesh    | Haande   | Thane       | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com | Ramesh       | F
+amilyFriend |
+| Snehal    | Kaale    | ManishNagar | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com | Yogesh       | F
+riend       |
++-----------+----------+-------------+--------+-------------+--------+-------------+------------------+--------------+--
+------------+
+3 rows in set (0.00 sec)
