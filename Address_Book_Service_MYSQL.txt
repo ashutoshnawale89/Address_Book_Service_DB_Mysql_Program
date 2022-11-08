@@ -39,3 +39,21 @@ mysql> select * from address_book_table where City='Pune';
 1 row in set (0.00 sec)
 
 mysql>
+
+mysql> INSERT INTO address_book_table VALUES('Charan','Sharma','Thane','Mumbai','Maharashtra',778895,74445248,'sharma@gmail.com','Yogesh','Friend');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> INSERT INTO address_book_table VALUES('Sharad','Rao','ChandniChowk','Delhi','Delhi',778895,74445248,'sharad@gmail.com','Snehal','GirlFriend');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from address_book_table ;
++-----------+----------+--------------+--------+-------------+--------+-------------+------------------+--------------+--------------+
+| FirstName | LastName | Address      | City   | State       | Zip    | PhoneNumber | Email            | RelationName | Type         |
++-----------+----------+--------------+--------+-------------+--------+-------------+------------------+--------------+--------------+
+| Ramesh    | Wagh     | Katraj       | Pune   | Maharashtra | 411005 |    78961230 | ramesh@gmail.com | Snehal       | Profession   |
+| Yogesh    | Haande   | Thane        | Mumbai | Maharashtra | 411023 |     7777777 | yogesh@gmail.com | Ramesh       | FamilyFriend |
+| Snehal    | Kaale    | ManishNagar  | Nagpur | Maharashtra | 414556 |    79222280 | snehal@gmail.com | Yogesh       | Friend       |
+| Charan    | Sharma   | Thane        | Mumbai | Maharashtra | 778895 |    74445248 | sharma@gmail.com | Yogesh       | Friend       |
+| Sharad    | Rao      | ChandniChowk | Delhi  | Delhi       | 778895 |    74445248 | sharad@gmail.com | Snehal       | GirlFriend   |
++-----------+----------+--------------+--------+-------------+--------+-------------+------------------+--------------+--------------+
+5 rows in set (0.00 sec)
